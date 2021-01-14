@@ -2,9 +2,10 @@ use std::collections::HashMap;
 
 // this method will calculate cash flow for the user 
 // (banks that are customers of Plaid for example)
-// add all income
-// add all debts
-// subtract total income from total debt to find cash flow per month
+// add all income per month
+// add all debts per month
+// subtract total income from total debt to find 
+// cash flow per month
 pub fn calc_cashflow(income: HashMap<String, f32>, debts: HashMap<String, f32>) -> f32{
     
     let mut income_total: f32 = 0.0;
@@ -24,6 +25,12 @@ pub fn calc_cashflow(income: HashMap<String, f32>, debts: HashMap<String, f32>) 
     
     return cash_flow;
 }
+// this method will calculate debt to income ratio for the user 
+// (banks that are customers of Plaid for example)
+// add all income per month
+// add all debts per month
+// divide debt by income to find 
+// DTR
 pub fn calc_debt_income_ratio (income: HashMap<String, f32>, debts: HashMap<String, f32>) -> f32{
 
     let mut income_total: f32 = 0.0;
@@ -70,4 +77,3 @@ pub fn main(){
     let cash_flow: f32 = calc_cashflow(income, debts);
     println!("cash flow: ${}", cash_flow);
 }
-
